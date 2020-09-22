@@ -1,11 +1,11 @@
 import BaseLayout from "../components/layouts/BaseLayout";
 
-const CV = () => {
+const Portfolios = () => {
   return (
     <BaseLayout>
-      <h1>I am CV Page</h1>
+      <h1>I am Portfolios Page</h1>
     </BaseLayout>
   );
 };
 
-export default CV;
+export default Portfolios;

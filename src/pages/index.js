@@ -1,10 +1,11 @@
-import Header from "../components/shared/Header";
+import BaseLayout from "../components/layouts/BaseLayout";
 
 const Index = () => {
   return (
     <>
-      <Header />
-      <h1>I am Index Page</h1>
+      <BaseLayout>
+        <h1>I am Index Page</h1>
+      </BaseLayout>
     </>
   );
 };

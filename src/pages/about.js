@@ -1,5 +1,11 @@
+import BaseLayout from "../components/layouts/BaseLayout";
+
 const About = () => {
-  return <h1>I am About Page</h1>;
+  return (
+    <BaseLayout>
+      <h1>I am About Page</h1>
+    </BaseLayout>
+  );
 };
 
 export default About;
