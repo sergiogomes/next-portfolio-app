@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 
 import BaseLayout from "../components/layouts/BaseLayout";
+import BasePage from "../components/BasePage";
 
 export const getServerSideProps = async () => {
   let posts = [];
@@ -43,9 +44,11 @@ const renderPosts = (posts) => {
 const Portfolios = ({ posts, error }) => {
   return (
     <BaseLayout>
-      <h1>I am Portfolios Page</h1>
-      <ul>{renderPosts(posts)}</ul>
-      <div>{renderError(error)}</div>
+      <BasePage>
+        <h1>I am Portfolios Page</h1>
+        <ul>{renderPosts(posts)}</ul>
+        <div>{renderError(error)}</div>
+      </BasePage>
     </BaseLayout>
   );
 };

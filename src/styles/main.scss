@@ -1,5 +1,5 @@
 @import "./shared/fonts";
-
+@import "./components/header";
 // Index page
 @import "./index";
 
@@ -19,6 +19,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.base-page {
+  padding-top: 150px;
+  color: #fff;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .self-typed {
