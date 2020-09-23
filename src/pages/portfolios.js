@@ -32,7 +32,7 @@ const renderPosts = (posts) => {
     posts &&
     posts.map((post) => (
       <li key={post.id}>
-        <Link href={`/portfolios/${post.id}`}>
+        <Link as={`/portfolios/${post.id}`} href={`/portfolios/[id]`}>
           <a>{post.title}</a>
         </Link>
       </li>

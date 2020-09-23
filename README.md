@@ -2,6 +2,12 @@
 
 next-portfolio-app
 
+[![time tracker](https://wakatime.com/badge/github/sergiogomes/next-portfolio-app.svg)](https://wakatime.com/badge/github/sergiogomes/next-portfolio-app)
+
+<!-- TODO:
+Place it on about's page
+https://wakatime.com/badge/github/sergiogomes/next-portfolio-app.svg -->
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

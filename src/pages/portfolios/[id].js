@@ -29,13 +29,20 @@ const renderError = (error) => {
 };
 
 const renderPost = (post) => {
-  return post && <li key={post.id}>{post.title}</li>;
+  return (
+    post && (
+      <>
+        <h1>{post.title}</h1>
+        <p>BODY: {post.body}</p>
+        <p>ID: {post.id}</p>
+      </>
+    )
+  );
 };
 
 const Portfolio = ({ post, error }) => {
   return (
     <BaseLayout>
-      <h1>I am Portfolio Page</h1>
       <ul>{renderPost(post)}</ul>
       <div>{renderError(error)}</div>
     </BaseLayout>
