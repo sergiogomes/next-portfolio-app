@@ -1,6 +1,9 @@
+import Typed from "react-typed";
+import { Container, Row, Col } from "reactstrap";
+
 import BaseLayout from "../components/layouts/BaseLayout";
 
-import { Container, Row, Col } from "reactstrap";
+const ROLES = ["ReactJS", "NextJS", "Angular", "NodeJS", "Express"];
 
 const Index = () => {
   return (
@@ -38,6 +41,17 @@ const Index = () => {
                   through the years!
                 </h1>
               </div>
+              <Typed
+                loop
+                strings={ROLES}
+                typeSpeed={40}
+                backSpeed={50}
+                backDelay={1000}
+                loopCount={0}
+                showCursor
+                className="self-typed"
+                cursorChar="|"
+              />
               <div className="hero-welcome-bio">
                 <h1>Let's take a look on my work.</h1>
               </div>
