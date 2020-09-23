@@ -1,5 +1,5 @@
-import BaseLayout from "../components/layouts/BaseLayout";
-import BasePage from "../components/BasePage";
+import BaseLayout from "@/src/components/layouts/BaseLayout";
+import BasePage from "@/src/components/BasePage";
 
 const CV = () => {
   return (

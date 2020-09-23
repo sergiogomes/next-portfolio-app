@@ -1,8 +1,8 @@
 import axios from "axios";
 import Link from "next/link";
 
-import BaseLayout from "../components/layouts/BaseLayout";
-import BasePage from "../components/BasePage";
+import BaseLayout from "@/src/components/layouts/BaseLayout";
+import BasePage from "@/src/components/BasePage";
 
 export const getServerSideProps = async () => {
   let posts = [];

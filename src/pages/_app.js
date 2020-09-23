@@ -1,15 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/main.scss";
+import "@/src/styles/main.scss";
 
-export const getServerSideProps = async ({ Component, ctx }) => {
-  let pageProps = {};
+// export const getServerSideProps = async ({ Component, ctx }) => {
+//   let pageProps = {};
 
-  if (Component.getServerSideProps) {
-    pageProps = await Component.getServerSideProps(ctx);
-  }
+//   if (Component.getServerSideProps) {
+//     pageProps = await Component.getServerSideProps(ctx);
+//   }
 
-  return { pageProps };
-};
+//   return { pageProps };
+// };
 
 const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;

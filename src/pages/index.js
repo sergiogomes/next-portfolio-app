@@ -1,7 +1,7 @@
 import Typed from "react-typed";
 import { Container, Row, Col } from "reactstrap";
 
-import BaseLayout from "../components/layouts/BaseLayout";
+import BaseLayout from "@/src/components/layouts/BaseLayout";
 
 const ROLES = ["ReactJS", "NextJS", "Angular", "NodeJS", "Express"];
 
