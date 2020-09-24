@@ -20,7 +20,6 @@ import { useGetData } from "@/actions";
 
 const Portfolios = () => {
   const { data, error, loading } = useGetData("/api/v1/posts");
-
   const renderLoading = (loading) => {
     return (
       loading && (
@@ -40,7 +39,7 @@ const Portfolios = () => {
 
   const renderError = (error) => {
     return (
-      error.message && (
+      error && (
         <div className="alert alert-danger">
           <h4>{error.title}</h4>
           <p>{error.message}</p>
