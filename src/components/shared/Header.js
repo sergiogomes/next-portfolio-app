@@ -25,7 +25,7 @@ const LoginLink = () => {
 };
 
 const LogoutLink = () => {
-  return <span className="nav-link port-navbar-link clickable">Login</span>;
+  return <span className="nav-link port-navbar-link clickable">Logout</span>;
 };
 
 const Header = () => {

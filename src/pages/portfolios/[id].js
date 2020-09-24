@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import BaseLayout from "@/src/components/layouts/BaseLayout";
+import BasePage from "@/src/components/BasePage";
 
 export const getServerSideProps = async ({ params }) => {
   let post = [];
@@ -43,8 +44,10 @@ const renderPost = (post) => {
 const Portfolio = ({ post, error }) => {
   return (
     <BaseLayout>
-      <ul>{renderPost(post)}</ul>
-      <div>{renderError(error)}</div>
+      <BasePage>
+        <ul>{renderPost(post)}</ul>
+        <div>{renderError(error)}</div>
+      </BasePage>
     </BaseLayout>
   );
 };

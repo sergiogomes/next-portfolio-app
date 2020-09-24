@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import BaseLayout from "@/src/components/layouts/BaseLayout";
 import BasePage from "@/src/components/BasePage";
+import { useGetPosts } from "@/actions";
 
 // If I want to fetch data from server side
 // export const getServerSideProps = async () => {
@@ -19,33 +19,32 @@ import BasePage from "@/src/components/BasePage";
 // };
 
 const Portfolios = () => {
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState({});
+  const { posts, error, loading } = useGetPosts();
 
-  useEffect(() => {
-    async function getPosts() {
-      const res = await fetch("/api/v1/posts");
-      if (res.status > 400) {
-        const error = {
-          title: "Unexpected error",
-          message: `${res.status} - ${res.statusText}`,
-        };
-        setError(error);
-      } else {
-        const data = await res.json();
-        setPosts(data);
-      }
-    }
-    getPosts();
-  }, []);
+  const renderLoading = (loading) => {
+    return (
+      loading && (
+        <div className="d-flex justify-content-center">
+          <button className="btn btn-warning" type="button" disabled>
+            <span
+              className="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span className="ml-2">Loading posts...</span>
+          </button>
+        </div>
+      )
+    );
+  };
 
   const renderError = (error) => {
     return (
       error.message && (
-        <>
+        <div className="alert alert-danger">
           <h4>{error.title}</h4>
           <p>{error.message}</p>
-        </>
+        </div>
       )
     );
   };
@@ -66,7 +65,8 @@ const Portfolios = () => {
   return (
     <BaseLayout>
       <BasePage>
-        <h1>I am Portfolios Page</h1>
+        <h1>Portfolios</h1>
+        <div>{renderLoading(loading)}</div>
         <ul>{renderPosts(posts)}</ul>
         <div>{renderError(error)}</div>
       </BasePage>
