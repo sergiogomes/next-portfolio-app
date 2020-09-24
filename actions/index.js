@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export const useGetPosts = () => {
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState({});
+export const useGetData = (url) => {
+  const [data, setData] = useState();
+  const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getPosts() {
-      const res = await fetch("/api/v1/posts");
+    async function fetchData() {
+      const res = await fetch(url);
       if (res.status > 400) {
         const error = {
           title: "Unexpected error",
@@ -16,12 +16,13 @@ export const useGetPosts = () => {
         setError(error);
       } else {
         const data = await res.json();
-        setPosts(data);
+        setData(data);
+        setError({});
       }
       setLoading(false);
     }
-    getPosts();
-  }, []);
+    url && fetchData();
+  }, [url]);
 
-  return { posts, error, loading };
+  return { data, error, loading };
 };

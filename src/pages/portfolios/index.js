@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import BaseLayout from "@/src/components/layouts/BaseLayout";
 import BasePage from "@/src/components/BasePage";
-import { useGetPosts } from "@/actions";
+import { useGetData } from "@/actions";
 
 // If I want to fetch data from server side
 // export const getServerSideProps = async () => {
@@ -19,7 +19,7 @@ import { useGetPosts } from "@/actions";
 // };
 
 const Portfolios = () => {
-  const { posts, error, loading } = useGetPosts();
+  const { data, error, loading } = useGetData("/api/v1/posts");
 
   const renderLoading = (loading) => {
     return (
@@ -67,7 +67,7 @@ const Portfolios = () => {
       <BasePage>
         <h1>Portfolios</h1>
         <div>{renderLoading(loading)}</div>
-        <ul>{renderPosts(posts)}</ul>
+        <ul>{renderPosts(data)}</ul>
         <div>{renderError(error)}</div>
       </BasePage>
     </BaseLayout>
