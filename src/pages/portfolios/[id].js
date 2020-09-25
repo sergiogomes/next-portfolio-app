@@ -1,6 +1,6 @@
 import BaseLayout from "@/src/components/layouts/BaseLayout";
 import BasePage from "@/src/components/BasePage";
-import { useGetData } from "@/actions";
+import { useGetPostById } from "@/actions";
 import { useRouter } from "next/router";
 
 // To fetch data from server side
@@ -39,10 +39,10 @@ const renderLoading = (loading) => {
 const renderError = (error) => {
   return (
     error && (
-      <>
+      <div className="alert alert-danger">
         <h4>{error.title}</h4>
         <p>{error.message}</p>
-      </>
+      </div>
     )
   );
 };
@@ -61,9 +61,7 @@ const renderPost = (post) => {
 
 const Portfolio = () => {
   const router = useRouter();
-  const { data, error, loading } = useGetData(
-    router.query.id ? `/api/v1/posts/${router.query.id}` : null
-  );
+  const { data, error, loading } = useGetPostById(router.query.id);
 
   return (
     <BaseLayout>
